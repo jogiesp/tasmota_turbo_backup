@@ -27,32 +27,43 @@ Kein Chaos mehr mit kryptischen Dateinamen – nur saubere, gut sortierbare Back
 
 ---
 
-## Installation von decode-config
+## Installation von decode-config und virtuelle Umgebung
 
 1. Repository klonen:
 
 git clone https://github.com/tasmota/decode-config.git ~/decode-config
 
-2. Virtuelle Umgebung erstellen (empfohlen):
+2. In das Verzeichnis wechseln:
 
-- cd ~/decode-config          # zuerst in das        Verzeichnis wechseln
+- cd ~/decode-config
 
-- python3 -m venv venv        # virtuelle Umgebung erstellen
+3. Python 3 und das venv-Modul sicherstellen (für Ubuntu/Debian):
 
-- source venv/bin/activate    # virtuelle Umgebung aktivieren
+- sudo apt update
+- sudo apt install python3 python3-venv python3-pip -y
 
-Oder Turbobefehl:  cd ~/decode-config && python3 -m venv venv && source venv/bin/activate
+4. Virtuelle Umgebung erstellen:
 
-3. Abhängigkeiten installieren:
+- python3 -m venv venv
 
-pip install --upgrade pip
-pip install -r requirements.txt
-# Falls du requirements.txt nicht hast, einfach:
-pip install configargparse requests
+Hinweis: Verwende keine &&-Verkettung, damit eventuelle Fehler sofort sichtbar sind.
 
-4. Testen:
+5. Virtuelle Umgebung aktivieren:
 
-python decode-config.py --help
+. source venv/bin/activate
+
+Die Shell zeigt nun (venv) am Anfang der Zeile an, was bedeutet, dass die virtuelle Umgebung aktiv ist.
+
+6. Abhängigkeiten installieren:
+
+- pip install --upgrade pip
+- pip install -r requirements.txt
+# Falls requirements.txt fehlt:
+- pip install configargparse requests
+
+7. Testen, ob alles funktioniert:
+
+. python decode-config.py --help
 
 Wenn die Hilfe angezeigt wird, bist du bereit für Turbo-Backup! 🎉
 
@@ -62,7 +73,7 @@ Wenn die Hilfe angezeigt wird, bist du bereit für Turbo-Backup! 🎉
 
 Dateiname: tasmota_turbo_backup.sh  
 
-**Features:**
+Features:
 
 - Scannt dein Netzwerk automatisch nach Tasmota-Geräten  
 - Backup im sauberen Format mit Datum  

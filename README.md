@@ -76,6 +76,24 @@ Wenn die Hilfe angezeigt wird, bist du bereit für Turbo-Backup! 🎉
 
 ---
 
+##  Installation von nmap und fping
+
+~~~
+sudo apt update
+~~~
+~~~
+sudo apt install -y nmap fping
+~~~
+
+
+
+
+
+
+
+
+
+
 ## Tasmota Turbo Backup Script hinzufügen
 
 Nachdem du decode-config installiert hast, kannst du das Turbo Backup Script direkt aus GitHub laden und in dein ~/decode-config-Verzeichnis legen.
@@ -179,6 +197,28 @@ deactivate
 rm -rf venv
 
 ~~~
+
+
+## ⚠️ Fehler, wenn beim Start folgende Meldung erscheint:
+
+~~~
+./tasmota_turbo_backup.sh
+1) Scanne Hosts mit offenem Port 80...
+./tasmota_turbo_backup.sh: Zeile 38: nmap: Kommando nicht gefunden.
+Keine Hosts gefunden. Fallback: fping-Scan...
+~~~
+bedeutet das, dass nmap nicht installiert oder nicht im PATH ist
+
+### Hinweis: Auf manchen Systemen benötigt fping spezielle Rechte, damit Nicht-Root-Nutzer ICMP-Anfragen senden können. Du kannst die nötige Berechtigung mit setcap setzen:
+
+
+~~~
+sudo apt install -y libcap2-bin    # falls setcap noch nicht vorhanden ist
+~~~
+~~~
+sudo setcap cap_net_raw+ep "$(command -v fping)"
+~~~
+
 
 
 

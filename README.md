@@ -35,9 +35,11 @@ git clone https://github.com/tasmota/decode-config.git ~/decode-config
 
 2. Virtuelle Umgebung erstellen (empfohlen):
 
-cd ~/decode-config
-python3 -m venv venv
-source venv/bin/activate
+cd ~/decode-config          # zuerst in das Verzeichnis wechseln
+python3 -m venv venv        # virtuelle Umgebung erstellen
+source venv/bin/activate    # virtuelle Umgebung aktivieren
+
+Oder Turbobefehl:  cd ~/decode-config && python3 -m venv venv && source venv/bin/activate
 
 3. Abhängigkeiten installieren:
 

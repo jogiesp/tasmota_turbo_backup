@@ -57,8 +57,11 @@ Die Shell zeigt nun (venv) am Anfang der Zeile an, was bedeutet, dass die virtue
 6. Abhängigkeiten installieren:
 ~~~
 pip install --upgrade pip
+~~~
+~~~
 pip install -r requirements.txt
 ~~~
+
 # Falls requirements.txt fehlt:
 ~~~
 pip install configargparse requests

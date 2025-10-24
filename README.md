@@ -85,15 +85,6 @@ sudo apt update
 sudo apt install -y nmap fping
 ~~~
 
-
-
-
-
-
-
-
-
-
 ## Tasmota Turbo Backup Script hinzufügen
 
 Nachdem du decode-config installiert hast, kannst du das Turbo Backup Script direkt aus GitHub laden und in dein ~/decode-config-Verzeichnis legen.
@@ -219,8 +210,35 @@ sudo apt install -y libcap2-bin    # falls setcap noch nicht vorhanden ist
 sudo setcap cap_net_raw+ep "$(command -v fping)"
 ~~~
 
+# Kurz gesagt:
+Wenn du alle Funktionen des Skripts nutzen willst, ist es am einfachsten, Root oder einen sudo-fähigen Benutzer zu verwenden.Das ist die einfachste möglichkeit. 
 
+### Benutzer zur `sudo`-Gruppe hinzufügen (Root-Rechte)
 
+Falls ein normaler Benutzer keine `sudo`-Rechte hat, melde dich einmal als **root** an und führe folgende Befehle aus:
+~~~
+als root z.B.  
+~~~
+~~~
+ssh root@hostname
+~~~
+~~~
+usermod -aG sudo <BENUTZERNAME>
+~~~
+Abmelden und wieder als dieser Benutzer einloggen, damit die Gruppenänderung aktiv wird:
+exit
+dann erneut als <BENUTZERNAME> anmelden
+
+Überprüfen:
+~~~
+groups         # sollte "sudo" anzeigen
+~~~
+
+~~~
+sudo whoami    # sollte "root" zurückgeben
+~~~
+
+⚠️ Achtung: Ein Benutzer mit sudo-Rechten kann alle Systembefehle ausführen. Verwende diese Rechte nur, wenn du die volle Kontrolle über das System hast.
 
 ## Lizenz
 

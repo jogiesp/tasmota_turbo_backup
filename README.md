@@ -116,33 +116,63 @@ Optional:
 
 1. Script ausführbar machen:
 
-chmod +x tasmota_turbo_backup.sh
+- chmod +x tasmota_turbo_backup.sh
 
 2. Script ausführen:
 
-./tasmota_turbo_backup.sh
+- ./tasmota_turbo_backup.sh
 
 3. Backup-Ergebnisse prüfen:
 
-ls -l ~/decode-config/tasmota/
+- ls -l ~/decode-config/tasmota/
 
 Beispiel für eine Backup-Datei:
-
 tasmota-Kaffee-0438-15.1.0_20251024.dmp
 
 ---
 
 ## Hinweis
 
-Dieses Script ist professionell, schnell, sauber, und ein bisschen witzig – damit auch dein Netzwerk Spaß hat 😎.  
+Dieses Script ist extremprofessionell, schnell, sauber, und ein bisschen witzig – damit auch dein Netzwerk Spaß hat 😎.  
 Es kann problemlos auf verschiedene Subnetze angepasst werden.
-
+---
 Wenn du beim Scan Meldungen siehst wie
 ERROR 418 (@4596): Error on http GET request for ... - Unknown code,
 keine Sorge, das ist kein echter Fehler.
 Der Decoder hat nur kurz gedacht: "Hey, das sieht aus wie ein Tasmota" 
 war’s aber nicht. Also einfach ignorieren . 🚀
 ---
+
+⚠️ Fehler: Virtuelle Umgebung schon aktiv
+
+Wenn du beim Erstellen der virtuellen Umgebung so eine Meldung bekommst:
+
+bash: /home/userX/decode-config/venv/bin/python3: Datei oder Verzeichnis nicht gefunden
+
+…liegt das meistens daran, dass du schon (venv) aktiviert hattest, bevor du die Umgebung überhaupt erstellt hast.
+
+(venv) im Prompt bedeutet: Die Shell denkt, eine virtuelle Umgebung sei aktiv.
+
+python3 -m venv venv versucht aber genau diese Umgebung neu zu erstellen.
+
+
+💡 Lösung (so wie ein Profi 😎):
+
+///
+# Alte Umgebung deaktivieren
+deactivate
+
+# Kaputtes venv löschen
+rm -rf venv
+
+# Neue virtuelle Umgebung erstellen
+python3 -m venv venv
+
+# Aktivieren
+source venv/bin/activate
+
+
+
 
 ## Lizenz
 
@@ -156,8 +186,6 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
-
 
 ---
 

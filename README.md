@@ -101,13 +101,23 @@ chmod +x tasmota_turbo_backup.sh
 ~~~
 Starte dann einfach dein Backup (nach Anpassung deiner virtuellen Umgebung):
  
- - source venv/bin/activate
- - ./tasmota_turbo_backup.sh
+Jedes Mal nach dem Login oder in einem neuen Terminal
 
+~~~
+cd ~/decode-config  # ins Projektverzeichnis wechseln
+~~~
+~~~
+source venv/bin/activate # venv aktivieren
+~~~
+~~~
+./tasmota_turbo_backup.sh
+
+~~~
+ 
 
 Features:
 
-- Scannt dein Netzwerk automatisch nach   Tasmota-Geräten  
+- Scannt dein Netzwerk automatisch nach     Tasmota-Geräten  
 - Backup im sauberen Format mit Datum  
 - Router-IP wird automatisch ausgeschlossen  
 - Parallele Backups für Turbo-Speed  

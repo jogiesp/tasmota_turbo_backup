@@ -189,7 +189,7 @@ source venv/bin/activate
 
 MIT License
 
-Copyright (c) 2025 jogi
+Copyright (c) 2025 jogiesp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

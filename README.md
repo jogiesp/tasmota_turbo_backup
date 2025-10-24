@@ -40,6 +40,8 @@ cd ~/decode-config
 3. Python 3 und das venv-Modul sicherstellen (für Ubuntu/Debian):
 ~~~
 sudo apt update
+~~~
+~~~
 sudo apt install python3 python3-venv python3-pip -y
 ~~~
 4. Virtuelle Umgebung erstellen:

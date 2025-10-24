@@ -176,11 +176,6 @@ deactivate
 # Kaputtes venv löschen
 rm -rf venv
 
-# Neue virtuelle Umgebung erstellen
-python3 -m venv venv
-
-# Aktivieren
-source venv/bin/activate
 ~~~
 
 

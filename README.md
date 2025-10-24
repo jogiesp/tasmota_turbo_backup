@@ -63,19 +63,31 @@ Die Shell zeigt nun (venv) am Anfang der Zeile an, was bedeutet, dass die virtue
 
 7. Testen, ob alles funktioniert:
 
-. python decode-config.py --help
+- python decode-config.py --help
 
 Wenn die Hilfe angezeigt wird, bist du bereit für Turbo-Backup! 🎉
 
 ---
 
-## Tasmota Turbo Backup Script
+## Tasmota Turbo Backup Script hinzufügen
 
-Dateiname: tasmota_turbo_backup.sh  
+Nachdem du decode-config installiert hast, kannst du das Turbo Backup Script direkt aus GitHub laden und in dein ~/decode-config-Verzeichnis legen.
+
+Führe dazu einfach Folgendes aus:
+
+- cd ~/decode-config
+- wget https://raw.githubusercontent.com/jogiesp/tasmota_turbo_backup/main/tasmota_turbo_backup.sh -O tasmota_turbo_backup.sh
+- chmod +x tasmota_turbo_backup.sh
+
+Starte dann einfach dein Backup (nach Anpassung deiner virtuellen Umgebung):
+ 
+ - source venv/bin/activate
+ - ./tasmota_turbo_backup.sh
+
 
 Features:
 
-- Scannt dein Netzwerk automatisch nach Tasmota-Geräten  
+- Scannt dein Netzwerk automatisch nach   Tasmota-Geräten  
 - Backup im sauberen Format mit Datum  
 - Router-IP wird automatisch ausgeschlossen  
 - Parallele Backups für Turbo-Speed  
@@ -125,13 +137,18 @@ tasmota-Kaffee-0438-15.1.0_20251024.dmp
 Dieses Script ist professionell, schnell, sauber, und ein bisschen witzig – damit auch dein Netzwerk Spaß hat 😎.  
 Es kann problemlos auf verschiedene Subnetze angepasst werden.
 
+Wenn du beim Scan Meldungen siehst wie
+ERROR 418 (@4596): Error on http GET request for ... - Unknown code,
+keine Sorge, das ist kein echter Fehler.
+Der Decoder hat nur kurz gedacht: "Hey, das sieht aus wie ein Tasmota" 
+war’s aber nicht. Also einfach ignorieren . 🚀
 ---
 
 ## Lizenz
 
 MIT License
 
-Copyright (c) 2025 DeinName
+Copyright (c) 2025 jogi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -140,7 +157,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-(The rest of MIT License text)
+
 
 ---
 

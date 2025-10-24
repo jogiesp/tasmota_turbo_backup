@@ -108,7 +108,7 @@ Features:
 
 Im Script:
 
-# Subnetz anpassen, z. B. 192.168.1.0/24 oder 10.0.0.0/24
+# Subnetz anpassen, z. B. 192.168.1.0/24 
 SUBNET="192.168.xxx.0/24"
 
 # Router-IP eintragen, damit sie nicht gescannt wird
@@ -124,9 +124,9 @@ Optional:
 ### Nutzung
 
 1. Script ausführbar machen:
-
-- chmod +x tasmota_turbo_backup.sh
-
+~~~
+chmod +x tasmota_turbo_backup.sh
+~~~
 2. Script ausführen:
 ~~~
 ./tasmota_turbo_backup.sh
@@ -144,19 +144,21 @@ tasmota-Kaffee-0438-15.1.0_20251024.dmp
 
 Dieses Script ist extremprofessionell, schnell, sauber, und ein bisschen witzig – damit auch dein Netzwerk Spaß hat 😎.  
 Es kann problemlos auf verschiedene Subnetze angepasst werden.
+
 ---
 Wenn du beim Scan Meldungen siehst wie
 ERROR 418 (@4596): Error on http GET request for ... - Unknown code,
 keine Sorge, das ist kein echter Fehler.
 Der Decoder hat nur kurz gedacht: "Hey, das sieht aus wie ein Tasmota" 
 war’s aber nicht. Also einfach ignorieren . 🚀
+
 ---
 
-⚠️ Fehler: Virtuelle Umgebung schon aktiv
+## ⚠️ Fehler: Virtuelle Umgebung schon aktiv
 
 Wenn du beim Erstellen der virtuellen Umgebung so eine Meldung bekommst:
 
-bash: /home/userX/decode-config/venv/bin/python3: Datei oder Verzeichnis nicht gefunden
+- bash: /home/userX/decode-config/venv/bin/python3: Datei oder Verzeichnis nicht gefunden
 
 …liegt das meistens daran, dass du schon (venv) aktiviert hattest, bevor du die Umgebung überhaupt erstellt hast.
 

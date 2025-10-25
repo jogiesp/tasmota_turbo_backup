@@ -250,6 +250,107 @@ sudo whoami    # sollte "root" zurückgeben
 
 ⚠️ Achtung: Ein Benutzer mit sudo-Rechten kann alle Systembefehle ausführen. Verwende diese Rechte nur, wenn du die volle Kontrolle über das System hast.
 
+
+
+---
+
+## Nutzung ohne virtuelle Umgebung (venv)
+
+Wenn du die virtuelle Umgebung nicht verwenden möchtest, z.B. weil die Python-Abhängigkeiten bereits systemweit installiert sind, kannst du das Skript direkt ausführen. Hier ist eine Schritt-für-Schritt-Anleitung:
+
+
+# 1️⃣ Voraussetzungen prüfen
+# Python 3.8+ muss installiert sein
+~~~
+python3 --version
+~~~
+
+# pip installieren / aktualisieren
+~~~
+python3 -m pip install --upgrade pip
+~~~
+
+# Benötigte Python-Pakete systemweit installieren
+~~~
+python3 -m pip install configargparse requests
+~~~
+
+# Auf Ubuntu/Debian, falls pip fehlt
+~~~
+sudo apt update
+~~~
+~~~
+sudo apt install python3-pip -y
+~~~
+
+# Tools nmap und fping installieren
+~~~
+sudo apt update
+~~~
+~~~
+sudo apt install -y nmap fping
+~~~
+# Optional: fping Rechte setzen
+~~~
+sudo apt install -y libcap2-bin
+~~~
+~~~
+sudo setcap cap_net_raw+ep "$(command -v fping)"
+~~~
+# 2️⃣ decode-config installieren
+~~~
+git clone https://github.com/tasmota/decode-config.git ~/decode-config
+cd ~/decode-config
+~~~
+# 3️⃣ Turbo Backup Script herunterladen
+~~~
+wget https://raw.githubusercontent.com/jogiesp/tasmota_turbo_backup/main/tasmota_turbo_backup.sh -O tasmota_turbo_backup.sh
+chmod +x tasmota_turbo_backup.sh
+~~~
+# 4️⃣ Backup starten (direkt, ohne venv)
+~~~
+cd ~/decode-config
+./tasmota_turbo_backup.sh
+~~~
+
+# Backups werden im Format erstellt:
+# tasmota-HOSTNAME-BOARDID-FIRMWARE-YYYYMMDD.dmp
+
+# 5️⃣ Hinweise
+# - Vorteil ohne venv: Einfachheit, keine Aktivierung nötig
+# - Nachteil: System-Python beeinflusst Pakete, Versionen sind nicht isoliert
+# - Für andere Rechner kann venv sinnvoll sein
+
+# 6️⃣ Optional: sudo-Rechte prüfen, falls Fehler auftreten
+# Als root anmelden
+~~~
+ssh root@hostname
+~~~
+# Benutzer zur sudo-Gruppe hinzufügen
+~~~
+usermod -aG sudo <BENUTZERNAME>
+~~~
+# Abmelden und wieder als Benutzer einloggen
+~~~
+exit
+~~~
+~~~
+ssh <BENUTZERNAME>@hostname
+~~~
+# Prüfen
+~~~
+groups         # sollte "sudo" 
+anzeigen
+~~~
+~~~
+sudo whoami    # sollte "root" zurückgeben
+~~~
+# ⚠️ Achtung: Sudo-Rechte erlauben vollen Systemzugriff. Nur für vertrauenswürdige Benutzer verwenden.
+
+
+
+
+
 ## Lizenz
 
 MIT License

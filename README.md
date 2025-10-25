@@ -390,4 +390,16 @@ furnished to do so, subject to the following conditions:
 
 Fühl dich frei, das Script zu verbessern, Fehler zu melden oder lustige Emojis einzubauen 😄.  
 
+
+## 🏆 Special thanks for support from the following Telegram groups  
+- [Tosmata](https://t.me/tasmota)  
+- [Tasmota-DE](https://t.me/TasmotaDE)
+
+## 🏆 Special thanks for
+
+
+- [curzon01](https://github.com/tasmota/decode-config)
+
+https://github.com/tasmota/decode-config
+
 Viel Spaß beim Backup deiner Tasmota-Geräte! ⚡

@@ -13,13 +13,12 @@ Schnelle, saubere Backups deiner Tasmota-Geräte im Netzwerk – mit Turbo-Speed
 - [Installation von decode-config und virtuelle Umgebung](#installation-von-decode-config-und-virtuelle-umgebung)
 - [Installation von nmap und fping](#installation-von-nmap-und-fping)
 - [Tasmota Turbo Backup Script hinzufügen](#tasmota-turbo-backup-script-hinzufügen)
-- [Nutzung mit virtueller Umgebung](#nutzung-mit-virtueller-umgebung)
-- [**Nutzung ohne virtuelle Umgebung (venv)**](#nutzung-ohne-virtuelle-umgebung-venv)
+- [**Installation ohne virtuelle Umgebung (venv)**](#nutzung-ohne-virtuelle-umgebung-venv)
 - [Anpassung für dein Netzwerk](#anpassung-für-dein-netzwerk)
 - [Hinweise und Fehlerbehandlung](#hinweise-und-fehlerbehandlung)
 - [Benutzer zur sudo-Gruppe hinzufügen (Root-Rechte)](#benutzer-zur-sudo-gruppe-hinzufügen-root-rechte)
 - [Lizenz](#lizenz)
-- [Mitwirken](#mitwirken)
+- [Mitwirken Special thanks](#mitwirken)
 
 ---
 

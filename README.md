@@ -40,8 +40,8 @@ Kein Chaos mehr mit kryptischen Dateinamen – nur saubere, gut sortierbare Back
 
 1. Linux / macOS (Windows geht auch mit WSL)  
 2. Python 3.8+  
-3. nmap und fping installiert  
-4. Tasmota-Geräte erreichbar im Netzwerk  
+3. nmap und fping  
+4. Tasmota-Geräte erreichbar im Netzwerk 🛜  
 5. [decode-config](https://github.com/tasmota/decode-config.git)  
 
 ---
@@ -180,7 +180,7 @@ tasmota-Kaffee-0438-15.1.0_20251024.dmp
 
 ---
 
-## Hinweis
+## hinweise-und-fehlerbehandlung
 
 Dieses Script ist extremprofessionell, schnell, sauber, und ein bisschen witzig – damit auch dein Netzwerk Spaß hat 😎.  
 Es kann problemlos auf verschiedene Subnetze angepasst werden.
@@ -319,16 +319,22 @@ sudo setcap cap_net_raw+ep "$(command -v fping)"
 ## 2️⃣ decode-config installieren
 ~~~
 git clone https://github.com/tasmota/decode-config.git ~/decode-config
+~~~
+~~~
 cd ~/decode-config
 ~~~
 ## 3️⃣ Turbo Backup Script herunterladen
 ~~~
 wget https://raw.githubusercontent.com/jogiesp/tasmota_turbo_backup/main/tasmota_turbo_backup.sh -O tasmota_turbo_backup.sh
+~~~
+~~~
 chmod +x tasmota_turbo_backup.sh
 ~~~
 ## 4️⃣ Backup starten (direkt, ohne venv)
 ~~~
 cd ~/decode-config
+~~~
+~~~
 ./tasmota_turbo_backup.sh
 ~~~
 
@@ -336,9 +342,8 @@ cd ~/decode-config
 ## tasmota-HOSTNAME-BOARDID-FIRMWARE-YYYYMMDD.dmp
 
 ## 5️⃣ Hinweise
-## - Vorteil ohne venv: Einfachheit, keine Aktivierung nötig
-## - Nachteil: System-Python beeinflusst Pakete, Versionen sind nicht isoliert
-## - Für andere Rechner kann venv sinnvoll sein
+- Vorteil ohne venv: Einfachheit, keine Aktivierung nötig
+- Nachteil: System-Python beeinflusst Pakete, Versionen sind nicht isoliert
 
 ## 6️⃣ Optional: sudo-Rechte prüfen, falls Fehler auftreten
 # Als root anmelden
@@ -358,8 +363,7 @@ ssh <BENUTZERNAME>@hostname
 ~~~
 ## Prüfen
 ~~~
-groups         # sollte "sudo" 
-anzeigen
+groups         # sollte "sudo" anzeigen
 ~~~
 ~~~
 sudo whoami    # sollte "root" zurückgeben
